@@ -205,19 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Center the ASCII art within the terminal window
   terminalText.style.textAlign = 'center';
 
-  // Function to generate ASCII art
-  function getAsciiArt() {
-      return `
-    ███████╗██████╗ 
-    ██╔════╝╚════██╗
-    ███████╗ █████╔╝
-    ╚════██║██╔═══╝ 
-    ███████║███████╗
-    ╚══════╝╚══════╝
-                    
-  `;
-  }
-
   // Get the audio element
   var audio = document.getElementById("myAudio");
 
