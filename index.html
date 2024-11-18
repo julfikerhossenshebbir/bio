@@ -11,8 +11,7 @@
 
 <body>
     <div class="link-container">
-        <img src="https://files.jhsite.com/jhs.jpg" alt="Profile Picture" class="profile-picture">
-        <h1>Md. Julfiker Hossen Shebbir</h1>
+    <img src="https://files.jhsite.com/jhs.jpg" alt="Profile Picture" class="profile-picture" onclick="showPreview(this)">        <h1>Md. Julfiker Hossen Shebbir</h1>
         <p>I am the captain of my ship.</p>
 
         <div class="social-icons">
@@ -77,6 +76,12 @@
             </a>
         </div>
     </div>
+
+    <!-- Modal -->
+<div id="imagePreviewModal" class="modal">
+    <span class="close" onclick="closePreview()">&times;</span>
+    <img id="previewImage" class="modal-content">
+</div>
   
   <div class="footer">
 
@@ -97,6 +102,8 @@
      <div class="wave"></div>
 
   </div>
+
+    <script src="script.js"></script>
     
 </body>
 
