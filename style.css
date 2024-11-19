@@ -1,4 +1,39 @@
 
+
+
+/* Text box styling */
+.about-me-box {
+    border: 1px dashed rgba(255, 255, 255, 0.3); /* Dashed border with semi-transparent white color */
+    padding: 15px; /* Space inside the box between content and border */
+    margin: 20px auto; /* Center the box horizontally and add vertical space */
+    max-width: 600px; /* Limit the maximum width of the box */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight transparent white background */
+    border-radius: 10px; /* Rounded corners for the box */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add a soft shadow for a 3D effect */
+    text-align: center; /* Center-align text inside the box */
+    font-family: Arial, sans-serif; /* Use a clean and readable font */
+    color: #ffffff; /* White text color for contrast */
+}
+
+/* H1 styling */
+.about-me-box h1 {
+    font-size: 24px; /* Increase font size for the heading */
+    font-weight: bold; /* Make the heading text bold */
+    margin-bottom: 10px; /* Add space below the heading */
+    color: rgba(255, 255, 255, 0.8); /* Slightly brighter white for the heading */
+}
+
+/* P styling */
+.about-me-box p {
+    font-size: 16px; /* Standard font size for paragraph text */
+    line-height: 1.6; /* Improve readability by adding line height */
+    color: rgba(255, 255, 255, 0.7); /* Slightly dimmer white for paragraph text */
+}
+
+
+
+
+
 /* Modal Styles */
 .modal {
     display: none; /* Hidden by default */
