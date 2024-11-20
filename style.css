@@ -78,21 +78,29 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #FF5757, #000000); /* লাল এবং কালো গ্রেডিয়েন্ট */
-    animation: gradient 20s ease infinite;
-    background-size: 300% 300%;
-    overflow: hidden;
+    background: linear-gradient(180deg, #FF5757 50%, #000000 50%); /* লাল ৫০%, কালো ৫০% */
+    animation: dynamic-move 5s ease infinite;
+    background-size: 200% 100%; /* ব্যাকগ্রাউন্ডের সাইজ */
 }
 
-@keyframes gradient {
+@keyframes dynamic-move {
     0% {
-        background-position: 0% 0%;
+        background-position: left; /* বাঁ দিক থেকে শুরু */
+        background-size: 40% 100%; /* লাল অংশ ৪০% */
+    }
+    25% {
+        background-size: 50% 100%; /* লাল অংশ ৫০% */
     }
     50% {
-        background-position: 50% 50%; /* ঢেউ-এর মতো উপরে নিচে মুভমেন্ট */
+        background-position: right; /* ডান দিকে পৌঁছানো */
+        background-size: 60% 100%; /* লাল অংশ ৬০% */
+    }
+    75% {
+        background-size: 30% 100%; /* লাল অংশ ৩০% */
     }
     100% {
-        background-position: 0% 0%;
+        background-position: left; /* বাঁ দিকে ফিরে আসা */
+        background-size: 50% 100%; /* লাল অংশ ৫০% */
     }
 }
 
