@@ -89,7 +89,7 @@ body {
 
             background: #000;
 
-            background: linear-gradient(135deg, #000000, #ffffff);
+            background: linear-gradient(135deg, #000000, #ffffff, #000000);
 
             animation: gradient 30s ease infinite;
 
