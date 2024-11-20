@@ -78,23 +78,31 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: radial-gradient(circle, #FF5757, #000000);
-    animation: ripple 10s infinite ease-in-out;
-    background-size: 200% 200%;
+    background: #000000; /* কালো ব্যাকগ্রাউন্ড */
     overflow: hidden;
+    position: relative;
 }
 
-@keyframes ripple {
-    0% {
-        background-position: 0% 50%;
+.ripple {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #0077FF, transparent); /* নীল রঙ */
+    border-radius: 50%;
+    animation: ripple-animation 6s infinite ease-in-out;
+    opacity: 0.8;
+}
+
+@keyframes ripple-animation {
+    0%, 100% {
+        transform: translate(-50px, -50px) scale(1);
     }
     50% {
-        background-position: 100% 50%;
+        transform: translate(10px, 10px) scale(1.2);
     }
-    100% {
-        background-position: 0% 50%;
-    }
-    }
+}
 
 .wave {
 
