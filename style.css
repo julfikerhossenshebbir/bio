@@ -78,29 +78,20 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(180deg, #FF5757 50%, #000000 50%); /* লাল ৫০%, কালো ৫০% */
-    animation: dynamic-move 5s ease infinite;
-    background-size: 200% 100%; /* ব্যাকগ্রাউন্ডের সাইজ */
+    background: linear-gradient(180deg, #FF5757, #000000); /* লাল এবং কালো */
+    animation: corner-move 5s ease infinite;
+    background-size: 100% 100%; /* মুভমেন্টের এলাকা নির্ধারণ */
 }
 
-@keyframes dynamic-move {
+@keyframes corner-move {
     0% {
-        background-position: left; /* বাঁ দিক থেকে শুরু */
-        background-size: 40% 100%; /* লাল অংশ ৪০% */
-    }
-    25% {
-        background-size: 50% 100%; /* লাল অংশ ৫০% */
+        background-position: top left; /* উপরের বাঁ কোণ */
     }
     50% {
-        background-position: right; /* ডান দিকে পৌঁছানো */
-        background-size: 60% 100%; /* লাল অংশ ৬০% */
-    }
-    75% {
-        background-size: 30% 100%; /* লাল অংশ ৩০% */
+        background-position: top right; /* নিচের ডান কোণ */
     }
     100% {
-        background-position: left; /* বাঁ দিকে ফিরে আসা */
-        background-size: 50% 100%; /* লাল অংশ ৫০% */
+        background-position: top left; /* ফিরে আসা */
     }
 }
 
