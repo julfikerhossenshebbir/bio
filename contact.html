@@ -1,200 +1,341 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Contact Me</title>
+
   <style>
+
     body {
+
       font-family: Arial, sans-serif;
+
       margin: 0;
+
       padding: 0;
+
       background-color: #f4f4f9;
+
       color: #333;
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       min-height: 100vh;
+
     }
 
     .contact-container {
+
       background-color: #fff;
+
       padding: 20px;
+
       border-radius: 8px;
+
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
       max-width: 400px;
+
       width: 100%;
+
     }
 
     .contact-container h2 {
+
       text-align: center;
+
       color: #444;
+
       margin-bottom: 20px;
+
     }
 
     .contact-container label {
+
       display: block;
+
       margin-bottom: 5px;
+
       font-weight: bold;
+
     }
 
     .contact-container input,
+
     .contact-container textarea {
+
       width: 100%;
+
       padding: 10px;
+
       margin-bottom: 15px;
+
       border: 1px solid #ccc;
+
       border-radius: 5px;
+
       font-size: 14px;
+
     }
 
     .contact-container textarea {
+
       resize: none;
+
       height: 100px;
+
     }
 
     .contact-container button {
+
       width: 100%;
+
       padding: 10px;
+
       background-color: #5a67d8;
+
       color: white;
+
       border: none;
+
       border-radius: 5px;
+
       font-size: 16px;
+
       cursor: pointer;
+
       transition: background-color 0.3s ease;
+
     }
 
     .contact-container button:hover {
+
       background-color: #434190;
+
     }
 
     .success-message,
+
     .error-message {
+
       text-align: center;
+
       font-size: 14px;
+
       margin-top: 10px;
+
     }
 
     .success-message {
+
       color: green;
+
     }
 
     .error-message {
+
       color: red;
+
     }
 
     .profile-link {
+
       margin-bottom: 10px;
+
     }
 
     .error-message {
+
       display: none;
+
     }
 
     /* Added styling for the error message */
+
     .error-message {
+
       color: red;
+
       font-size: 14px;
+
       display: none;
+
       text-align: center;
+
     }
+
   </style>
+
 </head>
+
 <body>
 
   <div class="contact-container">
+
     <h2>Contact Me</h2>
+
     <form id="contactForm">
+
       <label for="name">Your Name</label>
+
       <input type="text" id="name" name="name" placeholder="Enter your name" required />
 
       <label for="email">Your Email</label>
+
       <input type="email" id="email" name="email" placeholder="Enter your email" required />
 
       <label for="mobile">Your Mobile</label>
+
       <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number" />
 
       <label for="facebookProfile">Facebook Profile Link</label>
+
       <input type="url" id="facebookProfile" name="facebookProfile" placeholder="Facebook Profile Link" required />
 
       <label for="message">Your Message</label>
+
       <textarea id="message" name="message" placeholder="Write your message" required></textarea>
 
       <button type="submit">Send Message</button>
+
     </form>
 
     <div class="success-message" id="successMessage" style="display: none;">Message sent successfully!</div>
+
     <div class="error-message" id="errorMessage">Failed to send message. Please check the input and try again.</div>
+
   </div>
 
   <script>
+
     const botToken = "7385151783:AAHVeBOK9VVf5zlFW3oqlB_WZz3RpuOjcjY";
+
     const chatId = "5943499677";
 
     // Form submission handler
+
     document.querySelector("#contactForm").addEventListener("submit", function (e) {
+
       e.preventDefault();
 
       const name = document.getElementById("name").value;
+
       const email = document.getElementById("email").value;
+
       const mobile = document.getElementById("mobile").value || "N/A";
+
       const facebookProfile = document.getElementById("facebookProfile").value;
+
       const message = document.getElementById("message").value;
 
       // Validate Facebook Profile Link
+
       const facebookRegex = /^(https?:\/\/)?(www\.)?(facebook\.com\/)[a-zA-Z0-9(\.\?)?(\&=)]*$/;
+
       if (!facebookRegex.test(facebookProfile)) {
+
         document.getElementById("errorMessage").style.display = "block";
+
         return; // Exit if the link is invalid
+
       } else {
+
         document.getElementById("errorMessage").style.display = "none";
+
       }
 
       // Prepare the Telegram message with professional design
+
       const telegramMessage = `
-        <b>📧 New Message from Website:</b>
-        <b>Name:</b> ${name}  
-        <b>Email:</b> ${email}  
-        <b>Mobile:</b> ${mobile}  
-        <b>Facebook Profile:</b> ${facebookProfile}  
-        <b>Message:</b>
-        ${message}
+
+        <b>🌐 New Message from Website:</b>
+
+        <b>👤 Name:</b> ${name}  
+
+        <b>📧 Email:</b> ${email}  
+
+        <b>📱 Mobile:</b> ${mobile}  
+
+        <b>🔗 Facebook Profile:</b> ${facebookProfile}  
+
+        <b>💬 Message:</b>
+
+       ${message}
+
       `;
 
       // Send message to Telegram
+
       fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+
         method: "POST",
+
         headers: { "Content-Type": "application/json" },
+
         body: JSON.stringify({
+
           chat_id: chatId,
+
           text: telegramMessage,
+
           parse_mode: "HTML",
+
         }),
+
       })
+
         .then((response) => {
+
           if (response.ok) {
+
             document.getElementById("successMessage").style.display = "block";
+
             document.getElementById("errorMessage").style.display = "none";
 
             // Redirect user after successful submission
+
             setTimeout(function () {
+
               window.location.href = "https://www.julfikerhossenshebbir.com/";
+
             }, 2000); // Redirect after 2 seconds
+
           } else {
+
             document.getElementById("successMessage").style.display = "none";
+
             document.getElementById("errorMessage").style.display = "block";
+
           }
+
         })
+
         .catch(() => {
+
           document.getElementById("successMessage").style.display = "none";
+
           document.getElementById("errorMessage").style.display = "block";
+
         });
 
       // Reset the form after submission
+
       document.getElementById("contactForm").reset();
+
     });
+
   </script>
 
 </body>
+
 </html>
