@@ -1,113 +1,207 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Contact Me</title>
+
   <style>
+
     /* Body styling */
+
     body {
+
       font-family: Arial, sans-serif;
+
       margin: 0;
+
       padding: 0;
+
       background-color: #f4f4f9;
+
       color: #333;
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       min-height: 100vh;
+
     }
 
     /* Contact form container */
+
     .contact-container {
+
       background-color: #fff;
+
       padding: 20px;
+
       border-radius: 8px;
+
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
       max-width: 400px;
+
       width: 100%;
+
     }
 
     /* Heading */
+
     .contact-container h2 {
+
       text-align: center;
+
       color: #444;
+
       margin-bottom: 20px;
+
     }
 
     /* Form input styling */
+
     .contact-container label {
+
       display: block;
+
       margin-bottom: 5px;
+
       font-weight: bold;
+
     }
 
     .contact-container input,
+
     .contact-container textarea {
+
       width: 100%;
+
       padding: 10px;
+
       margin-bottom: 15px;
+
       border: 1px solid #ccc;
+
       border-radius: 5px;
+
       font-size: 14px;
+
+      transition: filter 0.3s ease; /* Smooth transition for blur effect */
+
     }
 
     .contact-container textarea {
+
       resize: none;
+
       height: 100px;
+
     }
 
     /* Submit button styling */
+
     .contact-container button {
+
       width: 100%;
+
       padding: 10px;
+
       background-color: #5a67d8;
+
       color: white;
+
       border: none;
+
       border-radius: 5px;
+
       font-size: 16px;
+
       cursor: pointer;
+
       transition: background-color 0.3s ease;
+
     }
 
     .contact-container button:hover {
+
       background-color: #434190;
+
     }
 
     /* Success and error messages */
+
     .success-message,
+
     .error-message {
+
       text-align: center;
+
       font-size: 14px;
+
       margin-top: 10px;
+
     }
 
     .success-message {
+
       color: green;
+
     }
 
     .error-message {
+
       color: red;
+
     }
+
+    /* Class for blur effect */
+
+    .blurred {
+
+      filter: blur(3px);
+
+      background-color: #e0e0e0;
+
+    }
+
   </style>
+
 </head>
+
 <body>
 
   <!-- Contact Form Container -->
+
   <div class="contact-container">
+
     <h2>Contact Me</h2>
+
     <form id="contactForm">
+
       <label for="name">Your Name</label>
+
       <input type="text" id="name" name="name" placeholder="Enter your name" required />
 
       <label for="email">Your Email</label>
+
       <input type="email" id="email" name="email" placeholder="Enter your email" required />
 
       <!-- Optional fields: Telegram or Facebook Profile Link -->
+
       <label for="telegram">Your Telegram</label>
-      <input type="text" id="telegram" name="telegram" placeholder="Enter your Telegram username" />
+
+      <input type"text" id="telegram" name="telegram" placeholder="Enter your Telegram username" />
 
       <label for="facebook">Your Facebook Profile Link</label>
+
       <input type="text" id="facebook" name="facebook" placeholder="Enter your Facebook profile link" />
       
       <label for="message">Your Message</label>
@@ -115,99 +209,175 @@
       <textarea id="message" name="message" placeholder="Write your message" required></textarea>
 
       <button type="submit">Send Message</button>
+
     </form>
 
     <!-- Feedback messages -->
+
     <div class="success-message" id="successMessage" style="display: none;">Message sent successfully!</div>
+
     <div class="error-message" id="errorMessage" style="display: none;">Failed to send message. Try again.</div>
+
   </div>
 
   <script>
+
     // Telegram Bot Token and Chat ID
+
     const botToken = "7385151783:AAHVeBOK9VVf5zlFW3oqlB_WZz3RpuOjcjY";
+
     const chatId = "5943499677";
 
-    // Function to disable the other input when one is filled
+    // Function to disable the other input when one is filled and apply blur effect
+
     function toggleFields() {
+
       const telegram = document.getElementById("telegram");
+
       const facebook = document.getElementById("facebook");
 
       if (telegram.value) {
+
         facebook.disabled = true;
+
+        facebook.classList.add("blurred"); // Apply blur effect to Facebook field
+
       } else {
+
         facebook.disabled = false;
+
+        facebook.classList.remove("blurred"); // Remove blur effect when re-enabled
+
       }
 
       if (facebook.value) {
+
         telegram.disabled = true;
+
+        telegram.classList.add("blurred"); // Apply blur effect to Telegram field
+
       } else {
+
         telegram.disabled = false;
+
+        telegram.classList.remove("blurred"); // Remove blur effect when re-enabled
+
       }
+
     }
 
     // Event listeners for the Telegram and Facebook fields
+
     document.getElementById("telegram").addEventListener("input", toggleFields);
+
     document.getElementById("facebook").addEventListener("input", toggleFields);
 
     // Form submission handler
+
     document.querySelector("#contactForm").addEventListener("submit", function (e) {
+
       e.preventDefault();
 
       // Collecting form data
+
       const name = document.getElementById("name").value;
+
       const email = document.getElementById("email").value;
+
       const message = document.getElementById("message").value;
+
       const telegram = document.getElementById("telegram").value;
+
       const facebook = document.getElementById("facebook").value;
 
       // Validation for Telegram or Facebook
+
       if (!(telegram || facebook)) {
+
         alert("Please provide either your Telegram or Facebook Profile Link.");
+
         return;
+
       }
 
       const telegramMessage = `
+
         📝 New Message:
+
         - Name: ${name}
+
         - Email: ${email}
+
         - Message: ${message}
+
         - Telegram: ${telegram || "Not provided"}
+
         - Facebook: ${facebook || "Not provided"}
+
       `;
 
       // Send message to Telegram
+
       fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+
         method: "POST",
+
         headers: { "Content-Type": "application/json" },
+
         body: JSON.stringify({
+
           chat_id: chatId,
+
           text: telegramMessage,
+
           parse_mode: "HTML",
+
         }),
+
       })
+
         .then((response) => {
+
           if (response.ok) {
+
             document.getElementById("successMessage").style.display = "block";
+
             document.getElementById("errorMessage").style.display = "none";
 
             // Redirect user to another page after successful form submission
+
             setTimeout(function () {
+
               window.location.href = "https://www.julfikerhossenshebbir.com/";
+
             }, 2000); // Redirect after 2 seconds
 
           } else {
+
             document.getElementById("successMessage").style.display = "none";
+
             document.getElementById("errorMessage").style.display = "block";
+
           }
+
         })
+
         .catch(() => {
+
           document.getElementById("successMessage").style.display = "none";
+
           document.getElementById("errorMessage").style.display = "block";
+
         });
 
       // Clear the form
+
       document.getElementById("contactForm").reset();
+
     });
+
   </script>
+
 </body>
+
 </html>
