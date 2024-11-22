@@ -1,8 +1,6 @@
 
 
-
-/* Text box styling */
-.about-me-box {
+.page-btn {
     border: 1px dashed rgba(255, 255, 255, 0.3); /* Dashed border with semi-transparent white color */
     padding: 15px; /* Space inside the box between content and border */
     margin: 20px auto; /* Center the box horizontally and add vertical space */
@@ -13,86 +11,143 @@
     text-align: center; /* Center-align text inside the box */
     font-family: Arial, sans-serif; /* Use a clean and readable font */
     color: #ffffff; /* White text color for contrast */
+  flex-direction: column; /* উপরের নিচে H1 এবং P থাকবে */
+
+    align-items: center; /* H1 এবং P সেন্টার এ থাকবে */
+
+    justify-content: center; /* খাড়া অবস্থানে কেন্দ্রীভূত করবে */
 }
 
 /* H1 styling */
-.about-me-box h1 {
-    font-size: 24px; /* Increase font size for the heading */
+.page-btn h1 {
+    font-size: 20px; /* Increase font size for the heading */
     font-weight: bold; /* Make the heading text bold */
     margin-bottom: 10px; /* Add space below the heading */
     color: rgba(255, 255, 255, 0.8); /* Slightly brighter white for the heading */
 }
 
 /* P styling */
-.about-me-box p {
+.page-btn p {
     font-size: 16px; /* Standard font size for paragraph text */
     line-height: 1.6; /* Improve readability by adding line height */
     color: rgba(255, 255, 255, 0.7); /* Slightly dimmer white for paragraph text */
 }
 
+.page-btn:hover {
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2), 0 0 15px rgba(48, 238, 226, 0.5);
+}
 
-
-
+.page-btn:active {
+    transform: scale(0.95) rotate(-1deg) translateY(2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 255, 255, 0.3); 
+}
 
 /* Modal Styles */
+
 .modal {
+
     display: none; /* Hidden by default */
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 100%;
+
     background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+
     z-index: 1000;
+
 }
 
 .modal-content {
+
     display: block;
+
     max-width: 80%;
+
     max-height: 80%;
+
     margin: 5% auto;
+
     border-radius: 10px;
+
 }
 
 /* Blur effect for link cards */
+
 body.modal-open .link-card {
+
     filter: blur(10px);
+
     transition: filter 0.3s ease;
+
 }
 
 .close {
+
     position: absolute;
+
     top: 20px;
+
     right: 35px;
+
     color: white;
+
     font-size: 40px;
+
     font-weight: bold;
+
     cursor: pointer;
+
 }
 
-
 body {
+
     margin: 0;
+
     padding: 0;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     min-height: 100vh;
+
     background: linear-gradient(180deg, #FF5757, #000000); /* লাল এবং কালো */
+
     animation: corner-move 5s ease infinite;
+
     background-size: 100% 100%; /* মুভমেন্টের এলাকা নির্ধারণ */
+
 }
 
 @keyframes corner-move {
+
     0% {
+
         background-position: top left; /* উপরের বাঁ কোণ */
+
     }
+
     50% {
+
         background-position: top right; /* নিচের ডান কোণ */
+
     }
+
     100% {
+
         background-position: top left; /* ফিরে আসা */
+
     }
+
 }
 
 .wave {
@@ -232,36 +287,61 @@ body {
          
 
         .link-card {
+
     display: flex;
+
     align-items: center;
+
     background-color: rgba(255, 255, 255, 0.1);
+
     padding: 10px 12px;
+
     border-radius: 10px;
+
     border: 1px dashed rgba(255, 255, 255, 0.3);
+
     margin: 15px 0;
+
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+
     cursor: pointer;
+
     width: 94%;
+
     height: 100%;
+
     transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.3s ease;
+
 }
 
 .link-card:hover {
+
     box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2), 0 0 15px rgba(48, 238, 226, 0.5);
+
 }
 
 .link-card:active {
+
     transform: scale(0.95) rotate(-1deg) translateY(2px);
+
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 255, 255, 0.3); 
+
 }
 
 .link-card a {
+
     display: flex;
+
     align-items: center;
+
     text-decoration: none;
+
     color: #ffffff;
+
     width: 100%;
+
     height: 100%;
+
 }
 
         .icon {
@@ -299,6 +379,7 @@ body {
         }
 
         .social-icons a i {
+
           margin: 0;
 
             text-decoration: none;
@@ -308,15 +389,21 @@ body {
             font-size: 24px;
 
             transition: transform 0.3s ease, fill 0.3s ease; /* স্মুথ ট্রানজিশন */
+
 }
 
 .social-icons a:hover i {
+
     transform: scale(1.2); /* হোভার করার সময় আইকনটি বড় হয় */
+
     fill: #48eec2; /* হোভার করার সময় রঙ পরিবর্তন হয় */
+
 }
 
 .social-icons a:active i {
+
     transform: scale(0.9) rotate(-5deg); /* ক্লিক করার সময় সংকুচিত ও ঘুরে যায় */
+
 }
 
         .link-container {
@@ -328,7 +415,9 @@ body {
             padding: 20px;
 
             border-radius: 10px;
+
           
+
            border: 1px dashed rgba(255, 255, 255, 0.3);
 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
