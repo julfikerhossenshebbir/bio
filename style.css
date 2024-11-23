@@ -1,6 +1,93 @@
 
 
 
+/* Menu container */
+.menu-container {
+    position: fixed;
+    top: 20px; /* Adjust for top placement */
+    left: 20px; /* Adjust for left placement */
+    z-index: 1000;
+}
+
+/* Menu toggle (SVG icon with blur circle background) */
+.menu-toggle {
+    background: transparent; /* No color */
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; /* Circle size */
+    height: 20px; /* Circle size */
+    backdrop-filter: blur(20px); /* Blur effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* For smooth animation */
+}
+
+.menu-toggle:active {
+    transform: scale(0.9); /* Slightly scale down on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+}
+
+/* Add a pulse effect on hover */
+.menu-toggle:hover {
+    animation: pulse 2s infinite; /* Pulse effect */
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 6px 8px rgba(255, 255, 255, 0.3); /* Slightly brighter pulse */
+    }
+    100% {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* SVG icon styling */
+.menu-toggle svg {
+    width: 20px; /* Adjusted icon size */
+    height: 20px;
+    fill: white; /* Icon color */
+}
+
+/* Dropdown menu */
+.menu {
+    display: none; /* Initially hidden */
+    /*background-color: rgba(51, 51, 51, 0.7); /* Transparent background */
+    border-radius: 5px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    padding: 10px 0;
+    text-align: left;
+    width: 150px;
+    backdrop-filter: blur(20px); /* Blur effect for menu background */
+}
+
+/* Menu item styles */
+.menu-item {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
 .about-paragraph {
 
     font-size: 16px;
