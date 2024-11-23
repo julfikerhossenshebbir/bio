@@ -9,6 +9,23 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+
+    <div class="menu-container">
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <!-- SVG Icon for menu -->
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24" fill="white">
+            <path d="M120 816v-60h720v60H120Zm0-180v-60h720v60H120Zm0-180v-60h720v60H120Z"/>
+        </svg>
+    </div>
+    <div class="menu" id="dropdownMenu">
+        <a href="/index.html" class="menu-item" data-page="home">Home</a>
+        <a href="/about.html" class="menu-item" data-page="about">About</a>
+        <a href="/contact.html" class="menu-item" data-page="contact">Contact</a>
+    </div>
+    </div>
+    
+    
     <div class="link-container">
 
     <img src="https://files.jhsite.com/jhs.jpg" alt="Profile Picture" class="profile-picture" onclick="showPreview(this)">        
