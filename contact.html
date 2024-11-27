@@ -3,9 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Me</title>
+  <title>Telegram Contact Form</title>
   <style>
-    /* Reset and Basic Styling */
+    /* Menu styling */
+.menu-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.menu-toggle {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-toggle:hover {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 6px 8px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.menu {
+  display: none;
+  background-color: rgba(51, 51, 51, 0.7);
+  border-radius: 5px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+  padding: 10px 0;
+  text-align: left;
+  width: 150px;
+  backdrop-filter: blur(20px);
+}
+
+.menu-item {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+
+
     * {
       margin: 0;
       padding: 0;
@@ -14,7 +87,7 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #8e9eab, #eef2f3);
+      background: linear-gradient(135deg, #7f8c8d, #f5f5f5);
       color: #333;
       display: flex;
       justify-content: center;
@@ -22,392 +95,280 @@
       min-height: 100vh;
       padding: 20px;
     }
-    
-    /* Menu styling */
 
-    .menu-container {
-
-      position: fixed;
-
-      top: 20px;
-
-      left: 20px;
-
-      z-index: 1000;
-
-    }
-
-    .menu-toggle {
-
-      background: transparent;
-
-      border: none;
-
-      padding: 10px;
-
-      border-radius: 50%;
-
-      cursor: pointer;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      width: 40px;
-
-      height: 40px;
-
-      backdrop-filter: blur(10px);
-
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .menu-toggle:hover {
-
-      animation: pulse 1.5s infinite;
-
-    }
-
-    @keyframes pulse {
-
-      0% {
-
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-      }
-
-      50% {
-
-        box-shadow: 0 6px 8px rgba(255, 255, 255, 0.3);
-
-      }
-
-      100% {
-
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-      }
-
-    }
-
-    .menu {
-
-      display: none;
-
-      background-color: rgba(51, 51, 51, 0.7);
-
-      border-radius: 5px;
-
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-
-      margin-top: 10px;
-
-      padding: 10px 0;
-
-      text-align: left;
-
-      width: 150px;
-
-      backdrop-filter: blur(20px);
-
-    }
-
-    .menu-item {
-
-      display: block;
-
-      padding: 10px 15px;
-
-      color: white;
-
-      text-decoration: none;
-
-      font-size: 14px;
-
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
-    }
-
-    .menu-item:last-child {
-
-      border-bottom: none;
-
-    }
-
-    .menu-item:hover {
-
-      background-color: rgba(255, 255, 255, 0.2);
-
-    }
-
-    /* Contact Form Container */
     .contact-container {
       background: white;
-      padding: 30px;
+      padding: 40px;
       border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      max-width: 400px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
       width: 100%;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      /*border: 1px dashed black;*/
     }
 
     .contact-container:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
 
-    /* Header Image */
-    .image-container img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 15px;
+    .contact-container img {
+      max-width: 100%;
+      height: auto;
       margin-bottom: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Heading */
     .contact-container h2 {
-      font-size: 24px;
+      font-size: 28px;
       color: #444;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       letter-spacing: 1px;
     }
 
     .contact-container p {
-      font-size: 14px;
+      font-size: 16px;
       color: #666;
       margin-bottom: 20px;
       line-height: 1.5;
     }
 
-    .contact-email {
-      font-size: 16px;
-      color: #E32C2C;
-      font-weight: bold;
+    .form-group {
       margin-bottom: 20px;
-      text-decoration: none;
-      display: inline-block;
-      background: #f9f9f9;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    .contact-email:hover {
-      background: #f1f1f1;
-    }
-
-    /* Form Input Styling */
-    .contact-container label {
-      display: block;
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #555;
       text-align: left;
     }
 
-    .contact-container input,
-    .contact-container textarea {
+    .form-group label {
+      font-size: 14px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .form-group input,
+    .form-group textarea {
       width: 100%;
       padding: 12px;
-      margin-bottom: 15px;
+      margin-top: 8px;
       border: 1px solid #ddd;
       border-radius: 8px;
       font-size: 14px;
       transition: border 0.3s ease;
     }
 
-    .contact-container input:focus,
-    .contact-container textarea:focus {
-      border-color: #E32C2C;
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #3498db;
       outline: none;
     }
 
-    .contact-container textarea {
+    .form-group textarea {
       resize: none;
       height: 120px;
     }
 
-    /* Submit Button Styling */
     .contact-container button {
       width: 100%;
       padding: 12px;
-      background: linear-gradient(135deg, #E32C2C, #D02929);
+      background: linear-gradient(135deg, #3498db, #2980b9);
       color: white;
       border: none;
       border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
       transition: background 0.3s ease;
-      /*border: 1px dashed black;*/
     }
 
     .contact-container button:hover {
-      background: linear-gradient(135deg, #D02929, #E32C2C);
+      background: linear-gradient(135deg, #2980b9, #3498db);
     }
 
-    /* Feedback Messages */
-    .success-message,
-    .error-message {
-      text-align: center;
-      font-size: 14px;
-      margin-top: 10px;
+    .loading-spinner {
       display: none;
+      margin: 20px auto;
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
     }
 
-    .success-message {
-      color: #2ecc71;
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
-    .error-message {
-      color: #e74c3c;
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .modal-content h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .modal-content p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .modal-content button {
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .modal-content button:hover {
+      background: #2980b9;
     }
   </style>
 </head>
 <body>
   
-  <!--menu-->
-  
-  <div class="menu-container">
+  <!-- Menu Container -->
+<div class="menu-container">
+  <button class="menu-toggle" onclick="toggleMenu()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+      <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+    </svg>
+  </button>
 
-    <button class="menu-toggle" onclick="toggleMenu()">
-  
-  <!-- New SVG icon -->
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
-
-  <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
-
-</svg>
-
-</button>
-
-<div class="menu" id="dropdownMenu">
-
-  <a href="https://www.julfikerhossenshebbir.com/" class="menu-item" data-page="home">Home</a>
-
-  <a href="/about.html" class="menu-item" data-page="about">About</a>
-
+  <div class="menu" id="dropdownMenu">
+    <a href="https://www.julfikerhossenshebbir.com/" class="menu-item" data-page="home">Home</a>
+    <a href="/about.html" class="menu-item" data-page="about">About</a>
+  </div>
 </div>
-
-</div>
-
-<!-- Contact Form Container -->
+  
   <div class="contact-container">
-    
-      <!-- Image Section -->
-    <div class="image-container">
-      <img src="https://files.jhsite.com/images/Contact_us.png" alt="Contact Us" />
-    </div>
-    <!-- Heading and Email -->
-    <h2>Contact Me</h2>
-    <p>
-      We’d love to hear from you! Whether you have a question, feedback, or a collaboration idea, this is the place to get in touch. Please fill out the form with your name, email, and message, and let us know how we can assist you. Your input is invaluable to us, and we’re committed to responding as quickly as possible.
-    </p>
-    <p>
-      For urgent inquiries, don’t hesitate to include your phone number or social media links. We value every message and aim to provide prompt and helpful responses to all your concerns. Let’s connect and create something meaningful together!
-    </p>
-    
-    <p>
-      Otherwise Email Me!
-    </p>
-    <a href="mailto:admin@julfikerhossenshebbir.com" class="contact-email">
-      admin@julfikerhossenshebbir.com
-    </a>
+    <!-- Image Added Here -->
+    <img src="https://files.jhsite.com/images/Contact_us.png" alt="Contact Us Image">
 
-    <!-- Contact Form -->
-    <form id="contactForm">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+    <h2>Telegram Contact Form</h2>
+    <p>Feel free to get in touch with us. We are here to help you!</p>
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+    <form id="enhancedContactForm">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+      </div>
 
-      <label for="mobile">Your Mobile / Social Accounts Links</label>
-      <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number / Social Links" />
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      </div>
 
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+      <div class="form-group">
+        <label for="phone">Mobile / Social Links</label>
+        <input type="text" id="phone" name="phone" placeholder="Enter your phone or social links" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+      </div>
 
       <button type="submit">Send Message</button>
     </form>
 
-    <!-- Feedback messages -->
-    <div class="success-message" id="successMessage">Message sent successfully!</div>
-    <div class="error-message" id="errorMessage">Failed to send message. Try again.</div>
+    <div class="loading-spinner" id="loadingSpinner"></div>
+  </div>
+
+  <div class="modal" id="thankYouModal">
+    <div class="modal-content">
+      <h3>Thank You!</h3>
+      <p>Your message has been sent successfully. We'll get back to you soon.</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
   </div>
 
   <script>
   
   function toggleMenu() {
+  const menu = document.getElementById("dropdownMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
 
-      const menu = document.getElementById("dropdownMenu");
 
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-
-    }
   
-    const botToken = "7385151783:AAHVeBOK9VVf5zlFW3oqlB_WZz3RpuOjcjY"; // Add your bot token
-    const chatId = "5943499677"; // Add your chat ID
+    const form = document.getElementById('enhancedContactForm');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    const thankYouModal = document.getElementById('thankYouModal');
 
-    document.querySelector("#contactForm").addEventListener("submit", function (e) {
+    // Telegram bot configuration
+    const botToken = "7385151783:AAHVeBOK9VVf5zlFW3oqlB_WZz3RpuOjcjY"; // Replace with your Telegram bot token
+    const chatId = "5943499677"; // Replace with your chat ID
+
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
+      loadingSpinner.style.display = 'block';
 
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const mobile = document.getElementById("mobile").value || "N/A";
-      const message = document.getElementById("message").value;
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
 
       const telegramMessage = `
-        📝 New Message:
-        - 👨‍🦱 Name: ${name}
+        - 📑 New Contact Form Submission:
+        - 👨 Name: ${name}
         - ✉️ Email: ${email}
         - 📞 Mobile / Social: ${mobile}
         - 📲 Message: ${message}
-        - 🚛 Sent From https://www.julfikerhossenshebbir.com/
       `;
 
       fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           chat_id: chatId,
           text: telegramMessage,
         }),
       })
-        .then((response) => {
-          if (response.ok) {
-            document.getElementById("successMessage").style.display = "block";
-            document.getElementById("errorMessage").style.display = "none";
-            
-            
-            // Redirect user to another page after successful form submission
-            setTimeout(function () {
-              window.location.href = "https://www.julfikerhossenshebbir.com/";
-            }, 4000); // Redirect after 4 seconds
-         
-          
-          } else {
-            document.getElementById("successMessage").style.display = "none";
-            document.getElementById("errorMessage").style.display = "block";
-          }
-        })
-        .catch(() => {
-          document.getElementById("successMessage").style.display = "none";
-          document.getElementById("errorMessage").style.display = "block";
-        });
-
-      document.getElementById("contactForm").reset();
+      .then((response) => {
+        if (response.ok) {
+          loadingSpinner.style.display = 'none';
+          thankYouModal.style.display = 'flex';
+          form.reset();
+        } else {
+          throw new Error("Failed to send message to Telegram");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again later.");
+        loadingSpinner.style.display = 'none';
+      });
     });
-    
-  
+
+    function closeModal() {
+      thankYouModal.style.display = 'none';
+      // Redirect after modal close
+      setTimeout(() => {
+        window.location.href = "https://www.julfikerhossenshebbir.com/";
+      }, 3000); // redirect after modal close
+    }
   </script>
 </body>
 </html>
