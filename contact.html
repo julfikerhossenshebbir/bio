@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Me!</title>
   <style>
-    /* Menu styling */
+  
+  /* Menu styling */
 .menu-container {
   position: fixed;
   top: 20px;
@@ -73,12 +74,8 @@
 .menu-item:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-
-
-
-
-
-
+  
+  
     * {
       margin: 0;
       padding: 0;
@@ -168,7 +165,7 @@
     .contact-container button {
       width: 100%;
       padding: 12px;
-      background: linear-gradient(135deg, #3498db, #2980b9);
+      background: linear-gradient(135deg, #DB3434, #B92929);
       color: white;
       border: none;
       border-radius: 8px;
@@ -178,7 +175,7 @@
     }
 
     .contact-container button:hover {
-      background: linear-gradient(135deg, #2980b9, #3498db);
+      background: linear-gradient(135deg, #B92929, #DB3434);
     }
 
     .loading-spinner {
@@ -308,8 +305,6 @@
   const menu = document.getElementById("dropdownMenu");
   menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
-
-
   
     const form = document.getElementById('enhancedContactForm');
     const loadingSpinner = document.getElementById('loadingSpinner');
@@ -329,11 +324,11 @@
       const message = document.getElementById('message').value;
 
       const telegramMessage = `
-        - 📑 New Contact Form Submission:
-        - 👨 Name: ${name}
-        - ✉️ Email: ${email}
-        - 📞 Mobile / Social: ${mobile}
-        - 📲 Message: ${message}
+        New Contact Form Submission:
+        - Name: ${name}
+        - Email: ${email}
+        - Phone: ${phone}
+        - Message: ${message}
       `;
 
       fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -367,7 +362,7 @@
       // Redirect after modal close
       setTimeout(() => {
         window.location.href = "https://www.julfikerhossenshebbir.com/";
-      }, 3000); // redirect after modal close
+      }, 3000); // Immediately redirect after modal close
     }
   </script>
 </body>
