@@ -300,43 +300,41 @@
   </div>
 
   <script>
-  
-  
-    const form = document.getElementById('enhancedContactForm');
-    const loadingSpinner = document.getElementById('loadingSpinner');
-    const thankYouModal = document.getElementById('thankYouModal');
+  const form = document.getElementById('enhancedContactForm');
+  const loadingSpinner = document.getElementById('loadingSpinner');
+  const thankYouModal = document.getElementById('thankYouModal');
 
-    // Telegram bot configuration
-    const botToken = "7385151783:AAHVeBOK9VVf5zlFW3oqlB_WZz3RpuOjcjY"; // Replace with your Telegram bot token
-    const chatId = "5943499677"; // Replace with your chat ID
+  // Telegram bot configuration
+  const botToken = "7385151783:AAHVeBOK9VVf5zlFW3oqlB_WZz3RpuOjcjY"; // Telegram Bot Token
+  const chatId = "5943499677"; // Chat ID
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      loadingSpinner.style.display = 'block';
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    loadingSpinner.style.display = 'block';
 
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const message = document.getElementById('message').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
 
-      const telegramMessage = `
-        New Contact Form Submission:
-        - 👨‍🦱 Name: ${name}
-        - ✉️ Email: ${email}
-        - 📞 Mobile / Social: ${mobile}
-        - 📲 Message: ${message}
-      `;
+    const telegramMessage = `
+      New Contact Form Submission:
+      - 👨‍🦱 Name: ${name}
+      - ✉️ Email: ${email}
+      - 📞 Mobile / Social: ${phone}
+      - 📲 Message: ${message}
+    `;
 
-      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: telegramMessage,
-        }),
-      })
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: telegramMessage,
+      }),
+    })
       .then((response) => {
         if (response.ok) {
           loadingSpinner.style.display = 'none';
@@ -351,22 +349,20 @@
         alert("An error occurred. Please try again later.");
         loadingSpinner.style.display = 'none';
       });
-    });
+  });
 
-    function closeModal() {
-      thankYouModal.style.display = 'none';
-      // Redirect after modal close
-      setTimeout(() => {
-        window.location.href = "https://www.julfikerhossenshebbir.com/";
-      }, 3000); // Immediately redirect after modal close
-    }
+  function closeModal() {
+    thankYouModal.style.display = 'none';
+    // Redirect after modal close
+    setTimeout(() => {
+      window.location.href = "https://www.julfikerhossenshebbir.com/";
+    }, 2000); // Redirect after 2 seconds
+  }
 
-    function toggleMenu() {
-  const menu = document.getElementById("dropdownMenu");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-
-    
-  </script>
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+</script>
 </body>
 </html>
