@@ -185,14 +185,6 @@
         console.error("Service Worker registration failed:", error);
       });
   }
-
-        document.addEventListener("copy", function(event) {
-            const selectedText = window.getSelection().toString();
-            if (selectedText) {
-                event.clipboardData.setData("text/plain", "🤣");
-                event.preventDefault();
-            }
-        });
         
     </script>
 
