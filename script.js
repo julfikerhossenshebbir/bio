@@ -1,3 +1,16 @@
+
+document.addEventListener("copy", (event) => {
+    // Get the selected text by the user
+    const selectedData = window.getSelection().toString();  // নির্বাচন করা টেক্সট
+
+    // Replace the copied text with a laughing emoji
+    event.clipboardData.setData("text/plain", "🤣");  // কপির জন্য ক্লিপবোর্ডে ইমোজি বসানো
+
+    // Prevent the default copy action (the text that was originally selected)
+    event.preventDefault();  // ডিফল্ট কপি কার্যকলাপ প্রতিরোধ করা
+});
+
+
 // Function to toggle menu visibility
 function toggleMenu() {
     const menu = document.getElementById("dropdownMenu");
