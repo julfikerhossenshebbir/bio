@@ -1,5 +1,5 @@
 const CACHE_NAME = "pwa-cache-v1";
-const urlsToCache = ["/index.html", "/styles.css", "/script.js", "/contact.html", "/about.html", "/404.html","/.htaccess"];
+const urlsToCache = ["/index.html", "/styles.css", "/script.js", "/contact.html", "/about.html"];
 
 // Install Service Worker
 self.addEventListener("install", event => {
