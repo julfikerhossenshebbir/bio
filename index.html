@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./style.css">
 
     <link rel="manifest" href="/pwa/manifest.json">
+    
 <meta name="theme-color" content="#000000">
 
   </head>
@@ -24,18 +25,27 @@
 <body>
   
   <div class="menu-container">
+      
     <div class="menu-toggle" onclick="toggleMenu()">
+        
         <!-- SVG Icon for menu -->
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
 
   <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
 
         </svg>
+        
     </div>
+      
     <div class="menu" id="dropdownMenu">
+        
         <a href="/about.html" class="menu-item" data-page="about">About</a>
+        
         <a href="/contact.html" class="menu-item" data-page="contact">Contact</a>
+        
     </div>
+      
 </div>
 
     <div class="link-container">
@@ -175,15 +185,15 @@
     <script src="script.js"></script>
 
     <script>
+        
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
-      .register("/pwa/sw.js")
-      .then(registration => {
-        console.log("Service Worker registered with scope:", registration.scope);
-      })
-      .catch(error => {
-        console.error("Service Worker registration failed:", error);
-      });
+      
+  navigator.serviceWorker
+    .register("./pwa/sw.js")
+      
+    .then(() => console.log("Service Worker Registered"))
+      
+    .catch((error) => console.error("Service Worker Registration Failed:", error));
   }
         
     </script>
