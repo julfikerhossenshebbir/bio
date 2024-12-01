@@ -1,7 +1,7 @@
 {
   "name": "J H S",
   "short_name": "J H S",
-  "start_url": "https://julfikerhossenshebbir.com/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
@@ -9,12 +9,37 @@
     {
       "src": "https://files.jhsite.com/jhs.jpg",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png"
     },
     {
       "src": "https://files.jhsite.com/jhs.jpg",
       "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "description": "",
+  "lang": "en",
+  "orientation": "portrait",
+  "categories": ["entertainment", "game"],
+  "screenshots": [
+    {
+      "src": "https://julfikerhossenshebbir.com/image/screenshots.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://julfikerhossenshebbir.com/image/screenshots1.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://julfikerhossenshebbir.com/image/screenshots2.jpg",
+      "sizes": "1280x720",
       "type": "image/jpeg"
     }
-  ]
+  ],
+  "display_override": ["fullscreen", "minimal-ui"],
+  "scope": "/",
+  "id": "/",
+  "prefer_related_applications": false
 }
