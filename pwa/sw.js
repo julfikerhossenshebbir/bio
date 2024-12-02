@@ -5,15 +5,15 @@ const CACHE_ASSETS = [
   "./styles.css",
   "./script.js",
   "./contact.html",
-  "./about.html",
-  "https://files.jhsite.com/jhs.jpg",
-  "https://files.jhsite.com/images/facebook.png",
-  "https://files.jhsite.com/images/messenger.png",
-  "https://files.jhsite.com/images/whatsapp.png",
-  "https://files.jhsite.com/images/telegram.png",
-  "https://files.jhsite.com/images/instagram.png",
-  "https://files.jhsite.com/images/threads.png",
-  "https://files.jhsite.com/images/pinterest.png"
+  "./about.html"
+  //"https://files.jhsite.com/jhs.jpg",
+  //"https://files.jhsite.com/images/facebook.png",
+  //"https://files.jhsite.com/images/messenger.png",
+  //"https://files.jhsite.com/images/whatsapp.png",
+  //"https://files.jhsite.com/images/telegram.png",
+  //"https://files.jhsite.com/images/instagram.png",
+  //"https://files.jhsite.com/images/threads.png",
+  //"https://files.jhsite.com/images/pinterest.png"
   ];
 
 // Install Service Worker and Cache All Assets
