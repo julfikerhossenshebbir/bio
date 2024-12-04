@@ -201,7 +201,6 @@ body.modal-open .link-card {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
     
     margin: 0;
 
@@ -366,11 +365,13 @@ body {
         }
 
         h1 {
-
-            color: #ffffff;
-
-            font-size: 25px;
-
+            
+    color: #ffffff;
+            
+    font-size: 25px;
+            
+    font-family: 'Birthstone', cursive;
+            
         }
 
         p {
