@@ -53,18 +53,18 @@ p {
 }
 
 
-.link-card {
+.about-paragraph, .link-card {
   
     transform: scale(1) rotate(3deg);
     opacity: 0;
     animation: cardFadeIn 1.5s ease-out forwards;
 }
 
-.link-card:nth-child(odd) {
+.about-paragraph, .link-card:nth-child(odd) {
     animation-delay: calc(2.6s + var(--index) * 0.3s);
 }
 
-.link-card:nth-child(even) {
+.about-paragraph, .link-card:nth-child(even) {
     animation-delay: calc(2.7s + var(--index) * 0.3s);
 }
 
