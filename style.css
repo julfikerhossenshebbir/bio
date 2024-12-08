@@ -134,6 +134,7 @@
     font-size: 16px; /* Standard font size for paragraph text */
     line-height: 1.6; /* Improve readability by adding line height */
     color: rgba(255, 255, 255, 0.7); /* Slightly dimmer white for paragraph text */
+    font-family: "Sriracha", cursive;
 }
 
 /* Modal Styles */
@@ -378,6 +379,8 @@ body {
 
             color: #ffffff;
 
+            font-family: "Sriracha", cursive;
+
         }
 
          
@@ -455,6 +458,8 @@ body {
         a span {
 
             font-size: 16px;
+
+            font-family: "Sriracha", cursive;
 
         }
 
