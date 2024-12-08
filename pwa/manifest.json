@@ -1,7 +1,7 @@
 {
   "name": "J H S",
   "short_name": "J H S",
-  "start_url": "https://julfikerhossenshebbir.com/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
@@ -17,8 +17,33 @@
       "type": "image/png"
     }
   ],
-  "display_override": ["fullscreen", "minimal-ui"],
+  "display_override": [
+    "fullscreen",
+    "window-controls-overlay",
+    "minimal-ui",
+    "browser",
+    "standalone"
+  ],
   "scope": "/",
   "id": "/",
-  "prefer_related_applications": false
+  "prefer_related_applications": false,
+  "lang": "en",
+  "dir": "auto",
+  "shortcuts": [
+    {
+      "name": "About",
+      "url": "./about.html",
+      "description": ""
+    },
+    {
+      "name": "Contact ",
+      "url": "./contact.html",
+      "description": ""
+    }
+  ],
+  "categories": [
+    "business",
+    "lifestyle",
+    "social"
+  ]
 }
