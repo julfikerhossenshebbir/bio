@@ -1,7 +1,7 @@
 {
   "name": "J H S",
   "short_name": "J H S",
-  "start_url": "./",
+  "start_url": "https://julfikerhossenshebbir.com/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
@@ -15,27 +15,6 @@
       "src": "https://files.jhsite.com/jhs.png",
       "sizes": "512x512",
       "type": "image/png"
-    }
-  ],
-  "description": "I am [Your Name], a passionate [Your Profession/Role] specializing in [Your Skills/Expertise]. I strive to create meaningful and impactful solutions through [mention your approach or focus]. Let’s connect to explore opportunities and create something amazing together!",
-  "lang": "en",
-  "orientation": "portrait",
-  "categories": ["entertainment", "game"],
-  "screenshots": [
-    {
-      "src": "./image/screenshots.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg"
-    },
-    {
-      "src": "./image/screenshots1.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg"
-    },
-    {
-      "src": "./image/screenshots2.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg"
     }
   ],
   "display_override": ["fullscreen", "minimal-ui"],
