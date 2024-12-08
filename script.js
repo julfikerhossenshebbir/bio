@@ -1,15 +1,6 @@
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Set animation delay for each link card
-    const linkCards = document.querySelectorAll(".link-card");
-    linkCards.forEach((card, index) => {
-        card.style.setProperty("--index", index + 0.5);
-    });
-});
-
-
 // Function to toggle menu visibility
 function toggleMenu() {
     const menu = document.getElementById("dropdownMenu");
