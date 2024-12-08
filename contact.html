@@ -373,7 +373,27 @@
 
   function toggleMenu() {
     const menu = document.getElementById("dropdownMenu");
+    
+    // Toggle menu visibility
     menu.style.display = menu.style.display === "block" ? "none" : "block";
+
+    // Add or remove event listener for clicking outside the menu
+    if (menu.style.display === "block") {
+      document.addEventListener("click", closeMenuOnClickOutside);
+    } else {
+      document.removeEventListener("click", closeMenuOnClickOutside);
+    }
+  }
+
+  function closeMenuOnClickOutside(event) {
+    const menu = document.getElementById("dropdownMenu");
+    const menuContainer = document.querySelector(".menu-container");
+
+    // Close menu if clicked outside the menu-container
+    if (!menuContainer.contains(event.target)) {
+      menu.style.display = "none";
+      document.removeEventListener("click", closeMenuOnClickOutside);
+    }
   }
 </script>
 </body>
