@@ -134,7 +134,7 @@
     font-size: 16px; /* Standard font size for paragraph text */
     line-height: 1.6; /* Improve readability by adding line height */
     color: rgba(255, 255, 255, 0.7); /* Slightly dimmer white for paragraph text */
-    font-family: "Sriracha", cursive;
+    font-family: "Oswald", sans-serif;
 }
 
 /* Modal Styles */
