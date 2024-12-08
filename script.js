@@ -1,15 +1,6 @@
 
 
 
-// লোডার ২ সেকেন্ড পরে অদৃশ্য করা
-window.addEventListener("load", function () {
-    const loader = document.getElementById('wifi-loader');
-    setTimeout(() => {
-        loader.classList.add('hidden'); // hidden ক্লাস যোগ করে অদৃশ্য করা
-    }, 2000); // ২০০০ms = ২ সেকেন্ড
-});
-
-
 // Function to toggle menu visibility
 function toggleMenu() {
     const menu = document.getElementById("dropdownMenu");
