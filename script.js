@@ -1,14 +1,12 @@
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Select the loader element
-  const loader = document.getElementById('wifi-loader');
-
-  // Set a timeout to hide the loader after 2 seconds
-  setTimeout(() => {
-    loader.style.display = 'none'; // Hides the loader
-  }, 2000); // 2000 milliseconds = 2 seconds
+// লোডার ২ সেকেন্ড পরে অদৃশ্য করা
+window.addEventListener("load", function () {
+    const loader = document.getElementById('wifi-loader');
+    setTimeout(() => {
+        loader.classList.add('hidden'); // hidden ক্লাস যোগ করে অদৃশ্য করা
+    }, 2000); // ২০০০ms = ২ সেকেন্ড
 });
 
 
