@@ -29,21 +29,39 @@
   "prefer_related_applications": false,
   "lang": "en",
   "dir": "auto",
+  "description": "Experience a modern and interactive way to manage and share your personal and professional biography with J H S. This PWA offers offline access, quick loading, and seamless device compatibility.",
   "shortcuts": [
     {
       "name": "About",
       "url": "./about.html",
-      "description": ""
+      "description": "Learn more about us."
     },
     {
       "name": "Contact ",
       "url": "./contact.html",
-      "description": ""
+      "description": "Get in touch with us."
     }
   ],
   "categories": [
     "business",
     "lifestyle",
     "social"
+  ],
+  "screenshots": [
+    {
+      "src": "https://files.jhsite.com/images/Screenshot1.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg"
+    },
+    {
+      "src": "https://files.jhsite.com/images/Screenshot2.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg"
+    },
+    {
+      "src": "https://files.jhsite.com/images/screenshot3.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg"
+    }
   ]
 }
