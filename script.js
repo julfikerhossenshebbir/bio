@@ -1,5 +1,17 @@
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Select the loader element
+  const loader = document.getElementById('wifi-loader');
+
+  // Set a timeout to hide the loader after 2 seconds
+  setTimeout(() => {
+    loader.style.display = 'none'; // Hides the loader
+  }, 2000); // 2000 milliseconds = 2 seconds
+});
+
+
 // Function to toggle menu visibility
 function toggleMenu() {
     const menu = document.getElementById("dropdownMenu");
