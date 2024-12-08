@@ -33,12 +33,12 @@
   "shortcuts": [
     {
       "name": "About",
-      "url": "./about.html",
+      "url": "https://julfikerhossenshebbir.com/about.html",
       "description": "Learn more about us."
     },
     {
       "name": "Contact ",
-      "url": "./contact.html",
+      "url": "https://julfikerhossenshebbir.com/contact.html",
       "description": "Get in touch with us."
     }
   ],
