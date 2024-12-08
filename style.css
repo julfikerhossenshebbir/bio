@@ -1,119 +1,6 @@
 
 
 
-.profile-picture {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 
-                0 0 30px rgba(255, 255, 255, 0.3);
-    animation: zoomIn 1.5s ease-out forwards;
-    opacity: 0;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.profile-picture:hover {
-    box-shadow: 0 0 25px rgba(48, 238, 226, 0.8), 
-                0 0 50px rgba(48, 238, 226, 0.6), 
-                0 0 75px rgba(48, 238, 226, 0.4);
-    transform: scale(1.05); 
-}
-
-@keyframes zoomIn {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-h1, p {
-    margin: 0;
-    opacity: 0;
-    animation: fadeSlideDown 1s ease-out forwards;
-}
-
-h1 {
-    animation-delay: 1.5s;
-}
-
-p {
-    animation-delay: 2s;
-}
-
-@keyframes fadeSlideDown {
-    0% {
-        transform: translateY(-30px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-
-.about-paragraph, .link-card {
-  
-    transform: scale(1) rotate(3deg);
-    opacity: 0;
-    animation: cardFadeIn 1.5s ease-out forwards;
-}
-
-.about-paragraph, .link-card:nth-child(odd) {
-    animation-delay: calc(2.6s + var(--index) * 0.3s);
-}
-
-.about-paragraph, .link-card:nth-child(even) {
-    animation-delay: calc(2.7s + var(--index) * 0.3s);
-}
-
-@keyframes cardFadeIn {
-    0% {
-        transform: scale(0.8) rotate(10deg);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
-    }
-}
-
-.social-icons {
-    opacity: 0;
-    animation: bounceIn 1s ease-out forwards;
-}
-
-
-.social-icons {
-    animation-delay: 3.8s;
-}
-
-@keyframes bounceIn {
-    0% {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    60% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.social-icons a {
-    
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icons a:hover {
-    
-    transform: scale(1.2);
-}
-
-
 /* Menu container */
 .menu-container {
     position: fixed;
@@ -475,6 +362,8 @@ body {
             display: block;
 
             margin: 0 auto 20px;
+
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),  0 0 30px rgba(255, 255, 255, 0.3);
 
         }
 
