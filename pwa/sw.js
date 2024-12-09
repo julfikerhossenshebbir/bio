@@ -6,8 +6,7 @@ const CACHE_ASSETS = [
   "./script.js",
   "./contact.html",
   "./about.html",
-  "https://files.jhsite.com/jhs.jpg",
-  "https://files.jhsite.com/"
+  "/jhs.jpg",
 ];
 
 // Install Service Worker and Cache All Assets
