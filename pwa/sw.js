@@ -1,56 +1,41 @@
-const CACHE_NAME = "offline-cache-v1";
-const CACHE_ASSETS = [
-  "./",
-  "./index.html",
-  "./styles.css",
-  "./script.js",
-  "./contact.html",
-  "./about.html",
-  "/jhs.jpg",
-];
+const CACHE_NAME = 'cool-cache';
 
-// Install Service Worker and Cache All Assets
-self.addEventListener("install", (event) => {
-  console.log("[Service Worker] Installing...");
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log("[Service Worker] Caching all assets");
-      return cache.addAll(CACHE_ASSETS);
-    })
-  );
+// Add whichever assets you want to precache here:
+const PRECACHE_ASSETS = [
+    './',
+    './index.html',
+    './styles.css',
+    './script.js',
+    './contact.html',
+    './about.html'
+]
+
+// Listener for the install event - precaches our assets list on service worker install.
+self.addEventListener('install', event => {
+    event.waitUntil((async () => {
+        const cache = await caches.open(CACHE_NAME);
+        cache.addAll(PRECACHE_ASSETS);
+    })());
 });
 
-// Activate Service Worker and Remove Old Caches
-self.addEventListener("activate", (event) => {
-  console.log("[Service Worker] Activating...");
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME) {
-            console.log("[Service Worker] Removing old cache:", cache);
-            return caches.delete(cache);
-          }
-        })
-      );
-    })
-  );
+self.addEventListener('activate', event => {
+  event.waitUntil(self.clients.claim());
 });
 
-// Fetch Event (Serve from Cache if Available)
-self.addEventListener("fetch", (event) => {
-  console.log("[Service Worker] Fetching:", event.request.url);
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      return (
-        cachedResponse ||
-        fetch(event.request).catch(() => {
-          // Return a fallback page or asset if offline
-          if (event.request.mode === "navigate") {
-            return caches.match("./index.html");
-          }
-        })
-      );
-    })
-  );
+self.addEventListener('fetch', event => {
+  event.respondWith(async () => {
+      const cache = await caches.open(CACHE_NAME);
+
+      // match the request to our cache
+      const cachedResponse = await cache.match(event.request);
+
+      // check if we got a valid response
+      if (cachedResponse !== undefined) {
+          // Cache hit, return the resource
+          return cachedResponse;
+      } else {
+        // Otherwise, go to the network
+          return fetch(event.request)
+      };
+  });
 });
