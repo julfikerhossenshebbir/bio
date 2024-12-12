@@ -73,3 +73,5 @@ function closePreview() {
           alert("View source is disabled!");
       }
   });
+
+  Object.defineProperty(console, '_commandLineAPI', { get: function() { throw 'Console is disabled'; } });
