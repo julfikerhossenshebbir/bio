@@ -1,137 +1,90 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
   <head>
-
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>404 - Md. Julfiker Hossen Shebbir</title>
-
+    <title>404 - Page Not Found</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
     <style>
-
       body {
-
         margin: 0;
-
         padding: 0;
-
         display: flex;
-
         justify-content: center;
-
         align-items: center;
-
         height: 100vh;
-
         background-color: #fff;
-
+        cursor: pointer;
       }
 
       .container {
-
         text-align: center;
-
+        width: 100%;
+        max-width: 1000px; /* Maximum width for larger devices */
+        padding: 20px;
       }
 
-      .row svg {
-
-        width: 100%;
-
-        max-width: 600px;
-
-        height: auto;
-
+      svg {
+        width: 100%; /* Full width for responsiveness */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 600px; /* Limit maximum size for large screens */
       }
 
       #handboy {
-
         animation: swing ease-in-out 1.3s infinite alternate;
-
         transform-origin: 98% 98%;
-
         transform-box: fill-box;
-
       }
 
       #girllight {
-
         animation: swing ease-in-out 1.3s infinite alternate;
-
         transform-origin: 0% 97%;
-
         transform-box: fill-box;
-
       }
 
       #hairgirl {
-
         animation: swinghair ease-in-out 1.3s infinite alternate;
-
         transform-origin: 60% 0%;
-
         transform-box: fill-box;
-
       }
 
       #zero {
-
         transform-origin: bottom;
-
         transform-box: fill-box;
-
       }
 
       /*************swing************/
-
       @keyframes swing {
-
         0% {
-
           transform: rotate(10deg);
-
         }
-
         100% {
-
           transform: rotate(-10deg);
-
         }
-
       }
 
       /*************swing hair************/
-
       @keyframes swinghair {
-
         0% {
-
           transform: rotate(6deg);
-
         }
-
         100% {
-
           transform: rotate(-6deg);
-
         }
-
       }
-
     </style>
-
+    <script>
+      // Redirect to homepage on body click
+      function redirectToHome() {
+        window.location.href = "/";
+      }
+    </script>
   </head>
-
-  <body>
-
- <div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-12 mt-5 mb-5">
-      <svg width="100%" height="auto" viewBox="0 0 636 324" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <body onclick="redirectToHome()">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 mt-5 mb-5">
+          <svg width="100%" height="auto" viewBox="0 0 636 324" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="OBJECTS">
 <g id="Group">
 <path id="Vector" d="M101.3 255.2C101.3 255.2 111.1 272.6 181.8 280.5C252.5 288.4 288.2 314.9 333.1 322.8C378 330.7 433.6 278.5 481.8 286.5C530 294.4 588.2 264.2 592.8 255.2H101.3Z" fill="#2F1829"/>
@@ -443,57 +396,31 @@
 </linearGradient>
 </defs>
 </svg>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
     <script>
-        document.addEventListener("click", function () {
-  window.location.href = "/";
-});
-
       // Row animation
-
       anime({
-
         targets: ".row svg",
-
         translateY: 10,
-
         autoplay: true,
-
         loop: true,
-
         easing: "easeInOutSine",
-
         direction: "alternate",
-
       });
 
       // Zero animation
-
       anime({
-
         targets: "#zero",
-
         translateX: 10,
-
         autoplay: true,
-
         loop: true,
-
         easing: "easeInOutSine",
-
         direction: "alternate",
-
         scale: [{ value: 1 }, { value: 1.4 }, { value: 1, delay: 250 }],
-
         rotateY: { value: "+=180", delay: 200 },
-
       });
-
     </script>
-
   </body>
-
-</html>
+  </html>
