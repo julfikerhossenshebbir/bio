@@ -10,8 +10,6 @@
     { "source": "/about.html", "destination": "/about", "permanent": true },
     { "source": "/contact.html", "destination": "/contact", "permanent": true },
     { "source": "/404.html", "destination": "/404", "permanent": true },
-    { "source": "/style.css", "destination": "/404", "permanent": true },
-    { "source": "/script.js", "destination": "/404", "permanent": true },
     { "source": "/index.html", "destination": "/", "permanent": true }
   ]
 }
