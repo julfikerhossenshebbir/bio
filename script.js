@@ -28,19 +28,33 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Show the image preview modal
 function showPreview(img) {
     const modal = document.getElementById("imagePreviewModal");
     const modalImg = document.getElementById("previewImage");
 
-    modal.style.display = "block";
+    modal.style.display = "flex"; // Use flexbox for centering
     modalImg.src = img.src;
+
+    // Add animation classes
+    modal.classList.add("fade-in");
+    modalImg.classList.add("zoom-in");
+
     document.body.classList.add("modal-open"); // Add blur to link cards
+
+    // Close the modal on outside click
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            closePreview();
+        }
+    });
 }
 
-// Close the image preview modal
 function closePreview() {
     const modal = document.getElementById("imagePreviewModal");
+
+    // Remove animation classes before hiding the modal
+    modal.classList.remove("fade-in");
+    document.getElementById("previewImage").classList.remove("zoom-in");
 
     modal.style.display = "none";
     document.body.classList.remove("modal-open"); // Remove blur from link cards
