@@ -59,3 +59,17 @@ function closePreview() {
     modal.style.display = "none";
     document.body.classList.remove("modal-open"); // Remove blur from link cards
 }
+
+
+
+  document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+  });
+
+
+  document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+          e.preventDefault();
+          alert("View source is disabled!");
+      }
+  });
