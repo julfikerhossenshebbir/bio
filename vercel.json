@@ -3,7 +3,7 @@
     { "source": "/about", "destination": "/about.html" },
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/404", "destination": "/404.html" },
-    { "source": "/home", "destination": "/index.html" }
+    { "source": "/home", "destination": "/index.html" },
     { "source": "/", "destination": "/index.html" }
   ],
   "redirects": [
