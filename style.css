@@ -125,6 +125,7 @@
 /* H1 styling */
 .page-btn h1, .page-btn h2 {
     font-size: 20px; /* Increase font size for the heading */
+    font-family: 'Birthstone', cursive;
     font-weight: bold; /* Make the heading text bold */
     margin-bottom: 10px; /* Add space below the heading */
     color: rgba(255, 255, 255, 0.8); /* Slightly brighter white for the heading */
@@ -133,6 +134,7 @@
 /* P styling */
 .page-btn p, .page-btn ul {
     font-size: 16px; /* Standard font size for paragraph text */
+    font-family: "Sriracha", cursive;
     line-height: 1.6; /* Improve readability by adding line height */
     color: rgba(255, 255, 255, 0.7); /* Slightly dimmer white for paragraph text */
 }
