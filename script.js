@@ -1,25 +1,6 @@
 
 
 
-self.addEventListener('install', function(event) {
-    event.waitUntil(
-        caches.open('offline-cache').then(function(cache) {
-            return cache.addAll([
-                '/offline.html', // আপনার offline পেজের URL
-            ]);
-        })
-    );
-});
-
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        fetch(event.request).catch(function() {
-            return caches.match('/offline.html');
-        })
-    );
-});
-
-
 // Function to toggle menu visibility
 function toggleMenu() {
     const menu = document.getElementById("dropdownMenu");
