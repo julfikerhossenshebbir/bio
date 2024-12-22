@@ -330,21 +330,19 @@
     const message = document.getElementById('message').value;
 
     const telegramMessage = `
-🌟 *New Contact Form Submission* 🌟
+🌟 New Contact Form Submission 🌟
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
-🧑‍💼 *Name:* \`${name}\`
+🧑‍💼 Name: ${name}
 
-📧 *Email:* \`${email}\`
+📧 Email: ${email}
 
-📱 *Mobile / Social:* \`${phone}\`
+📱 Mobile / Social: ${phone}
 
-📝 *Message:* \`\`\`
-${message}
-\`\`\`
+📝 Message: ${message}
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-🚀 *Thank you for reaching out!* 🚀
+🚀 Thank you for reaching out! 🚀
 `;
 
     fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
