@@ -1,17 +1,6 @@
 
 
 
-function delayedRedirect(event) {
-            event.preventDefault();
-            const url = event.currentTarget.href;
-            setTimeout(() => {
-                window.open(url, '_blank');
-            }, 1000);
-}
-
-
-
-
 
 
 // Function to toggle menu visibility
