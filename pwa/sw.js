@@ -6,8 +6,8 @@ const PRECACHE_ASSETS = [
     './index.html',
     './styles.css',
     './script.js',
-    './contact/index.html',
-    './about/index.html'
+    './contact.html',
+    './about.html'
 ]
 
 // Listener for the install event - precaches our assets list on service worker install.
