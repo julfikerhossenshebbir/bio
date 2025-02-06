@@ -1,13 +1,5 @@
 {
   "rewrites": [
-    { "source": "/codepen", "destination": "/codepen.html" },
-    { "source": "/pinterest", "destination": "/pinterest.html" },
-    { "source": "/whatsapp", "destination": "/whatsapp.html" },
-    { "source": "/telegram", "destination": "/telegram.html" },
-    { "source": "/threads", "destination": "/threads.html" },
-    { "source": "/instagram", "destination": "/instagram.html" },
-    { "source": "/messenger", "destination": "/messenger.html" },
-    { "source": "/facebook", "destination": "/facebook.html" },
     { "source": "/about", "destination": "/about.html" },
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/404", "destination": "/404.html" },
@@ -15,14 +7,7 @@
     { "source": "/", "destination": "/index.html" }
   ],
   "redirects": [
-    { "source": "/codepen.html", "destination": "/codepen", "permanent": true },
-    { "source": "/pinterest.html", "destination": "/pinterest", "permanent": true },
-    { "source": "/whatsapp.html", "destination": "/whatsapp", "permanent": true },
-    { "source": "/telegram.html", "destination": "/telegram", "permanent": true },
-    { "source": "/threads.html", "destination": "/threads", "permanent": true },
-    { "source": "/instagram.html", "destination": "/instagram", "permanent": true },
-    { "source": "/messenger.html", "destination": "/messenger", "permanent": true },
-    { "source": "/facebook.html", "destination": "/facebook", "permanent": true },
+    { "source": "/about.html", "destination": "/about", "permanent": true },
     { "source": "/contact.html", "destination": "/contact", "permanent": true },
     { "source": "/404.html", "destination": "/404", "permanent": true },
     { "source": "/index.html", "destination": "/", "permanent": true }
