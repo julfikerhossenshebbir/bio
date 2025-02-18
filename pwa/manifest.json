@@ -1,6 +1,6 @@
 {
-  "name": "J H S",
-  "short_name": "J H S",
+  "name": "MD. J H S",
+  "short_name": "MD. J H S",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -30,32 +30,7 @@
   "lang": "en",
   "dir": "auto",
   "description": "Experience a modern and interactive way to manage and share your personal and professional biography with J H S. This PWA offers offline access, quick loading, and seamless device compatibility.",
-  "shortcuts": [
-  {
-    "name": "About",
-    "url": "/about",
-    "description": "Learn more about us.",
-    "icons": [
-      {
-        "src": "/pwa/about.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      }
-    ]
-  },
-  {
-    "name": "Contact",
-    "url": "/contact",
-    "description": "Get in touch with us.",
-    "icons": [
-      {
-        "src": "/pwa/contact.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      }
-    ]
-  }
-],
+  
   "categories": [
     "business",
     "lifestyle",
