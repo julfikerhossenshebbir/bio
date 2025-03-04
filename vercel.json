@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/subscription", "destination": "/subscription.html" },
     { "source": "/about", "destination": "/about.html" },
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/404", "destination": "/404.html" },
@@ -7,6 +8,7 @@
     { "source": "/", "destination": "/index.html" }
   ],
   "redirects": [
+    { "source": "/subscription.html", "destination": "/subscription", "permanent": true },
     { "source": "/about.html", "destination": "/about", "permanent": true },
     { "source": "/contact.html", "destination": "/contact", "permanent": true },
     { "source": "/404.html", "destination": "/404", "permanent": true },
