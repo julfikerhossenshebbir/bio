@@ -68,12 +68,4 @@ function closePreview() {
       e.preventDefault();
   });
 
-
-  document.addEventListener('keydown', function(e) {
-      if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
-          e.preventDefault();
-          alert("View source is disabled!");
-      }
-  });
-
   Object.defineProperty(console, '_commandLineAPI', { get: function() { throw 'Console is disabled'; } });
