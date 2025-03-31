@@ -1,8 +1,3 @@
-
-
-
-
-
 // Function to toggle menu visibility
 function toggleMenu() {
     const menu = document.getElementById("dropdownMenu");
@@ -61,11 +56,3 @@ function closePreview() {
     modal.style.display = "none";
     document.body.classList.remove("modal-open"); // Remove blur from link cards
 }
-
-
-
-  document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-  });
-
-  Object.defineProperty(console, '_commandLineAPI', { get: function() { throw 'Console is disabled'; } });
